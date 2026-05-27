@@ -36,7 +36,7 @@ export default function ProjectModal({ project, onClose }) {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-medium">
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-brand-100 dark:bg-brand-900/50 text-brand-700 dark:text-brand-300 font-medium">
                     {project.company}
                   </span>
                   <span className="text-xs text-gray-400">{card.period}</span>
@@ -46,12 +46,11 @@ export default function ProjectModal({ project, onClose }) {
               </div>
               <button
                 onClick={onClose}
-                className="flex-shrink-0 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="flex-shrink-0 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               >
                 ✕
               </button>
             </div>
-            {/* Tags */}
             <div className="flex flex-wrap gap-1.5 mt-3">
               {card.tags.map((tag, i) => (
                 <span key={i} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
@@ -62,32 +61,28 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           <div className="px-6 py-6 space-y-6">
-            {/* Background */}
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">📌 배경</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{details.background}</p>
             </div>
 
-            {/* Role */}
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">🎯 역할</h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">{details.role}</p>
             </div>
 
-            {/* Work */}
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">🔨 주요 업무</h3>
               <ul className="space-y-2">
                 {details.work.map((w, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0" />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-400 flex-shrink-0" />
                     {w}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Key Issues (optional) */}
             {details.keyIssues && details.keyIssues.length > 0 && (
               <div>
                 <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">⚠️ 주요 의사결정</h3>
@@ -112,20 +107,18 @@ export default function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* Results */}
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wide">📈 성과</h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {details.results.map((r, i) => (
-                  <div key={i} className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-3 text-center">
-                    <div className="text-base font-bold text-indigo-700 dark:text-indigo-300 leading-tight mb-1">{r.metric}</div>
+                  <div key={i} className="bg-brand-50 dark:bg-brand-900/20 rounded-xl p-3 text-center">
+                    <div className="text-base font-bold text-brand-700 dark:text-brand-300 leading-tight mb-1">{r.metric}</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400 leading-tight">{r.desc}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Note */}
             {details.note && (
               <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-800/30 rounded-xl p-4">
                 <p className="text-sm text-amber-800 dark:text-amber-300 leading-relaxed">💡 {details.note}</p>

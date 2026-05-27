@@ -15,38 +15,37 @@ export default function Recognition() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2">Recognition</p>
+          <p className="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-2">Recognition</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">동료 평가</h2>
           <p className="text-gray-500 dark:text-gray-400 text-sm">{recognition.headline}</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Quotes Slider */}
+          {/* Quotes */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/10 rounded-2xl p-6 min-h-[180px] relative border border-indigo-100 dark:border-indigo-800/30 mb-4">
-              <span className="text-5xl text-indigo-200 dark:text-indigo-800 leading-none select-none">"</span>
+            <div className="bg-gradient-to-br from-brand-50 to-brand-100/50 dark:from-brand-900/20 dark:to-brand-900/10 rounded-2xl p-6 min-h-[180px] relative border border-brand-100 dark:border-brand-800/30 mb-4">
+              <span className="text-5xl text-brand-200 dark:text-brand-800 leading-none select-none">"</span>
               <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed -mt-4 mb-4">
                 {recognition.quotes[quoteIndex].text}
               </p>
-              <div className="text-xs text-indigo-500 dark:text-indigo-400 font-medium">
+              <div className="text-xs text-brand-500 dark:text-brand-400 font-medium">
                 — {recognition.quotes[quoteIndex].from}
               </div>
             </div>
-            {/* Pagination dots */}
             <div className="flex gap-2 justify-center">
               {recognition.quotes.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setQuoteIndex(i)}
-                  className={`w-2 h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all ${
                     i === quoteIndex
-                      ? 'bg-indigo-600 w-6'
-                      : 'bg-gray-200 dark:bg-gray-700'
+                      ? 'bg-brand-600 w-6'
+                      : 'bg-gray-200 dark:bg-gray-700 w-2'
                   }`}
                 />
               ))}
@@ -61,7 +60,6 @@ export default function Recognition() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            {/* Scores */}
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wide">📊 평가 항목</h3>
               <div className="space-y-2">
@@ -70,7 +68,7 @@ export default function Recognition() {
                     <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 w-24 flex-shrink-0">{s.category}</span>
                     <span className={`text-sm font-bold flex-shrink-0 ${
                       s.category === '종합'
-                        ? 'text-indigo-600 dark:text-indigo-400'
+                        ? 'text-brand-600 dark:text-brand-400'
                         : 'text-gray-900 dark:text-white'
                     }`}>{s.score}</span>
                     <span className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">{s.note}</span>
@@ -79,13 +77,12 @@ export default function Recognition() {
               </div>
             </div>
 
-            {/* Strengths */}
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wide">⭐ 강점</h3>
               <ul className="space-y-2">
                 {recognition.strengths.map((s, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-500 flex-shrink-0" />
                     {s}
                   </li>
                 ))}

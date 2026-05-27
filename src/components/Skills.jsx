@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion';
-import { skills, levelColor } from '../data/skills';
+import { skills } from '../data/skills';
+
+const levelColor = {
+  Expert:       "bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300",
+  Advanced:     "bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300",
+  Intermediate: "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400",
+};
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding bg-gray-50 dark:bg-gray-900">
+    <section id="skills" className="section-padding bg-brand-50 dark:bg-gray-900">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -12,7 +18,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2">Skills</p>
+          <p className="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-2">Skills</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">기술 스택</h2>
         </motion.div>
 
@@ -24,7 +30,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: gi * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-brand-100 dark:border-gray-700"
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">{group.icon}</span>

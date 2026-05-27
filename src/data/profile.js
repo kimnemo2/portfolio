@@ -1,6 +1,7 @@
 export const profile = {
   name: "김나연",
-  nameEn: "Nayeon Kim",
+  nameEn: "Nahyeon Kim",
+  photo: "/profile.png",
   title: "Service Operation Manager",
   subtitle: "CX 4년차 · 데이터·AI 기반 서비스 운영 전문가",
   tagline: "고객의 목소리를 데이터로, 데이터를 시스템으로 만듭니다",

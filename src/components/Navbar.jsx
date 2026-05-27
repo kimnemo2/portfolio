@@ -24,9 +24,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
     e.preventDefault();
     setMenuOpen(false);
     const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -35,11 +33,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <a
             href="#"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="text-lg font-bold text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            className="text-lg font-bold text-gray-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
           >
             {profile.nameEn}
           </a>
@@ -51,22 +48,21 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors font-medium"
               >
                 {link.label}
               </a>
             ))}
-            {/* Dark mode toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-brand-100 dark:hover:bg-brand-900/30 transition-colors"
               aria-label="Toggle dark mode"
             >
               {darkMode ? '☀️' : '🌙'}
             </button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile */}
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -83,7 +79,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800">
             {navLinks.map((link) => (
@@ -91,7 +86,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="block py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+                className="block py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors font-medium"
               >
                 {link.label}
               </a>

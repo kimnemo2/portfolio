@@ -3,9 +3,8 @@ import { deliverables, subProjects } from '../data/deliverables';
 
 export default function Deliverables() {
   return (
-    <section id="deliverables" className="section-padding bg-gray-50 dark:bg-gray-900">
+    <section id="deliverables" className="section-padding bg-brand-50 dark:bg-gray-900">
       <div className="container-max">
-        {/* Deliverables */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -13,7 +12,7 @@ export default function Deliverables() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2">Deliverables</p>
+          <p className="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-2">Deliverables</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">조직에 남긴 자산</h2>
           <p className="text-gray-500 dark:text-gray-400 text-sm">직접 기획·제작하여 팀에 정착시킨 SOPs & 워크북</p>
         </motion.div>
@@ -26,7 +25,7 @@ export default function Deliverables() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 hover:border-indigo-200 dark:hover:border-indigo-700 transition-colors shadow-sm"
+              className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-brand-100 dark:border-gray-700 hover:border-brand-300 dark:hover:border-brand-700 transition-colors shadow-sm"
             >
               <div className="text-2xl mb-3">{d.icon}</div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white leading-snug mb-1">{d.title}</h3>
@@ -41,10 +40,10 @@ export default function Deliverables() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-8"
+          className="mb-6"
         >
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Additional Work</h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">그 외 업무 기여</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">그 외 업무 기여</p>
         </motion.div>
 
         <div className="space-y-3">
@@ -59,7 +58,7 @@ export default function Deliverables() {
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap mb-1">
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-medium">
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 font-medium">
                     {sp.company}
                   </span>
                   <span className="text-xs text-gray-400">{sp.period}</span>
