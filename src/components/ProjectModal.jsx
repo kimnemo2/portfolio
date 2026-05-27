@@ -42,7 +42,7 @@ export default function ProjectModal({ project, onClose }) {
                   <span className="text-xs text-gray-400">{card.period}</span>
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white leading-snug">{card.title}</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{card.headline}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">{card.headline}</p>
               </div>
               <button
                 onClick={onClose}
@@ -68,15 +68,16 @@ export default function ProjectModal({ project, onClose }) {
 
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">🎯 역할</h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">{details.role}</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 font-medium leading-relaxed">{details.role}</p>
             </div>
 
             <div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">🔨 주요 업무</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {details.work.map((w, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-400 flex-shrink-0" />
+                  /* li 태그 내부에 leading-relaxed 주입으로 긴 문장 가독성 최적화 */
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-400 fill-brand-400 flex-shrink-0" />
                     {w}
                   </li>
                 ))}
@@ -97,8 +98,9 @@ export default function ProjectModal({ project, onClose }) {
                     <tbody>
                       {details.keyIssues.map((ki, i) => (
                         <tr key={i} className="border-b border-gray-50 dark:border-gray-800/50">
-                          <td className="py-2 pr-4 text-gray-600 dark:text-gray-400 align-top">{ki.issue}</td>
-                          <td className="py-2 text-gray-600 dark:text-gray-400 align-top">{ki.decision}</td>
+                          {/* 표 내부 줄간격 고도화 및 패딩 조절(py-3) */}
+                          <td className="py-3 pr-4 text-gray-600 dark:text-gray-400 align-top leading-relaxed">{ki.issue}</td>
+                          <td className="py-3 text-gray-600 dark:text-gray-400 align-top leading-relaxed">{ki.decision}</td>
                         </tr>
                       ))}
                     </tbody>

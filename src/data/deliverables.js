@@ -64,19 +64,14 @@ export const subProjects = [
     tags: ["프로모션", "정책 설계"]
   },
   {
+    /* 기존 i-goo 프로젝트 바로 위에 있던 프로젝트입니다 */
     title: "Arkain 정식 런칭 대응 & LG B2B 파일럿 VoC 정리",
     company: "구름",
     period: "2026.04 – 진행 중",
     impact: "LG 코드프로 AI 역량평가 1차 이슈 4건 분석 → 2차 대비 개선 제언 11개 도출",
     tags: ["B2B", "정식 런칭"]
   },
-  {
-    title: "i-goo 보안 AI 앱 정합성 분석",
-    company: "구름",
-    period: "2026.04 – 진행 중",
-    impact: "Slack 기반 AI 분석 앱 정합성 검증 — 40개 예시 질문 DB 설계·입력 완료",
-    tags: ["AI 도구", "정합성 검증"]
-  },
+  /* ⭐ i-goo 보안 AI 앱 정합성 분석 프로젝트가 깔끔하게 삭제되었습니다. */
   {
     title: "고객 채널톡 1:1 응대 & 일상 운영",
     company: "구름",

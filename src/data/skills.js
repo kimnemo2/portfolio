@@ -35,8 +35,7 @@ export const skills = [
     icon: "🤝",
     items: [
       { name: "Slack", level: "Expert" },
-      { name: "Notion", level: "Expert" },
-      { name: "Jira", level: "Intermediate" }
+      { name: "Notion", level: "Expert" }
     ]
   }
 ];
