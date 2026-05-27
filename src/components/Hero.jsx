@@ -7,10 +7,18 @@ function CountUp({ target, duration = 1500 }) {
   const ref = useRef(null);
   const startedRef = useRef(false);
 
-  const numStr = target.replace(/[^0-9.]/g, '');
-  const numVal = parseFloat(numStr) || 0;
+  // 1. 숫자가 시작되기 전의 접두사 추출 (예: "EE×3"에서 "EE×")
   const prefix = target.match(/^[^0-9]*/)?.[0] || '';
-  const suffix = target.replace(prefix, '').replace(numStr, '');
+  
+  // 2. 접두사를 제외한 실제 숫자 형태 문자열 추출 (쉼표, 마침표 포함)
+  const numMatch = target.replace(prefix, '').match(/[0-9.,]+/)?.[0] || '';
+  
+  // 3. 애니메이션 계산을 위해 순수 숫자만 추출 (쉼표 제거)
+  const numStr = numMatch.replace(/[^0-9.]/g, '');
+  const numVal = parseFloat(numStr) || 0;
+  
+  // 4. 숫자 뒤에 붙는 나머지 접미사 추출
+  const suffix = target.replace(prefix, '').replace(numMatch, '');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
