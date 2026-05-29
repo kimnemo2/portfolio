@@ -25,7 +25,7 @@ export default function Deliverables() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-brand-100 dark:border-gray-700 hover:border-brand-300 dark:hover:border-brand-700 transition-colors shadow-sm"
+              className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-brand-100 dark:border-gray-700 shadow-sm"
             >
               <div className="text-2xl mb-3">{d.icon}</div>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white leading-snug mb-1">{d.title}</h3>

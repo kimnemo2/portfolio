@@ -5,6 +5,7 @@ export const projects = [
     id: "arkain-migration",
     company: "구름",
     tier: 1,
+    categories: ["CX 운영"],
     card: {
       title: "구름IDE → Arkain 서비스 이관 프로젝트",
       headline: "45만 명 대상 글로벌 서비스 이관 운영 총괄",
@@ -34,7 +35,7 @@ export const projects = [
         { metric: "280만 건", desc: "누적 안내 발송 (오발송 0건)" },
         { metric: "2건 이하", desc: "고객 분쟁 억제" },
         { metric: "0%", desc: "45만 명 대상 안내 누락률" },
-        { metric: "전사 표준", desc: "[서비스 종료 CX 워크북]이 향후 유사 프로젝트의 표준 레퍼런스로 채택" }
+        { metric: "전사 표준", desc: "유사 프로젝트 표준 레퍼런스로 채택" }
       ]
     }
   },
@@ -43,6 +44,7 @@ export const projects = [
     id: "voc-automation",
     company: "구름",
     tier: 1,
+    categories: ["AI·자동화", "데이터·분석"],
     card: {
       title: "VOC 자동화 시스템 구축 & 데이터 리포트 체계 수립",
       headline: "Gemini + Apps Script로 만든 5분 주기 VOC 파이프라인",
@@ -66,7 +68,7 @@ export const projects = [
         { metric: "30분 → 0분", desc: "VOC 전처리 공수 100% 자동화" },
         { metric: "14회", desc: "정기 VOC 리포트 발행 (스프린트 단위)" },
         { metric: "17개 컬럼", desc: "구조화된 자동 분류 체계" },
-        { metric: "전 채널 일원화", desc: "노션 DB 통합 → 스쿼드 전체 실시간 피드백 확인" }
+        { metric: "전 채널 일원화", desc: "노션 DB 통합, 팀 전체 실시간 확인" }
       ]
     }
   },
@@ -75,6 +77,7 @@ export const projects = [
     id: "abuse-defense",
     company: "구름",
     tier: 1,
+    categories: ["정책·거버넌스", "데이터·분석"],
     card: {
       title: "어뷰징 대응 & 서비스 보안 체계 구축",
       headline: "사이버보안팀 공조 + CXM 관점 제품 개선안까지",
@@ -95,7 +98,7 @@ export const projects = [
       ],
       results: [
         { metric: "1,280명", desc: "누적 차단 (오탐률 0.8%)" },
-        { metric: "77% ↓", desc: "어뷰저 1인당 평균 크레딧 소모량 (49.4 → 11.4)" },
+        { metric: "77% ↓", desc: "1인당 평균 크레딧 소모 (49.4→11.4)" },
         { metric: "4.3배", desc: "어뷰저 1인당 리소스 사용 시간 단축" },
         { metric: "90% ↓", desc: "공격 유입량 감소 (주간 316명 → 25명)" },
         { metric: "100% 차단", desc: "SMS 인증 후 어뷰징 (190건 → 4건/주)" },
@@ -109,6 +112,7 @@ export const projects = [
     id: "terms-revision",
     company: "구름",
     tier: 1,
+    categories: ["정책·거버넌스"],
     card: {
       title: "이용약관 · 개인정보처리방침 6차 개정 리딩",
       headline: "GDPR · COPPA · 한국법 3개 법체계 동시 충족",
@@ -129,11 +133,15 @@ export const projects = [
         "법인 구조 투명화: 한국 법인과 해외 결제 대행 자회사 역할 분리 명시",
         "법적 권고사항을 개발팀 즉시 구현 가능한 Task 단위로 직접 정의"
       ],
+      links: [
+        { label: "개인정보처리방침", url: "https://account.arkain.io/privacy-policy" },
+        { label: "이용약관", url: "https://account.arkain.io/terms-of-service/2026010" }
+      ],
       results: [
         { metric: "6차 개정", desc: "25단계 히스토리 관리" },
         { metric: "20+ 건", desc: "시스템 요구사항(Task) 도출 및 제품 반영" },
-        { metric: "15개사", desc: "Subprocessors 공시 (AWS, OpenAI, Anthropic, Twilio, Stripe, Apple, Google 등)" },
-        { metric: "3개 법체계", desc: "한국법·GDPR·COPPA 동시 충족 — 단일 개정으로 글로벌 공개 필수 요건 충족" }
+        { metric: "15개사", desc: "Subprocessors 공시 (AWS·OpenAI 등)" },
+        { metric: "3개 법체계", desc: "단일 개정으로 글로벌 공개 필수 요건 충족" }
       ]
     }
   },
@@ -142,6 +150,7 @@ export const projects = [
     id: "docs-release-notes",
     company: "구름",
     tier: 1,
+    categories: ["CX 운영"],
     card: {
       title: "Docs 콘텐츠 전략 & 릴리즈 노트 체계 구축",
       headline: "콘텐츠 품질 기준 정립으로 글로벌 가독성 5.2배 성장",
@@ -159,13 +168,17 @@ export const projects = [
         "릴리즈 노트 가이드라인 ver2 업데이트",
         "노션 & 슬랙 연동으로 릴리즈 노트 작성 프로세스 자동화 (Major/Minor 구분, 템플릿 적용)",
         "통합 QA 참여 — 고객 관점 시나리오 기반 페인 포인트 발굴",
-        "릴리즈 노트 직접 작성: 103~114 Sprint"
+        "릴리즈 노트 직접 작성: 103~117 Sprint"
       ],
       results: [
-        { metric: "5.2배", desc: "Docs 월 방문자 성장 (5월 398명 → 12월 2,085명, 424%↑)" },
+        { metric: "5.2배", desc: "월 방문자 성장 (398→2,085명)" },
         { metric: "15건", desc: "릴리즈 노트 발행" },
-        { metric: "8건", desc: "통합 QA에서 제품 수정 사항 도출" },
-        { metric: "D-3 안착", desc: "부서 간 병목 해소, 발행 퀄리티 상향 평준화" }
+        { metric: "8건", desc: "고객 관점 QA로 제품 개선 발굴" },
+        { metric: "D-3 안착", desc: "부서 병목 해소, 퀄리티 평준화" }
+      ],
+      links: [
+        { label: "Arkain 사용자 가이드", url: "https://docs.arkain.io/" },
+        { label: "릴리즈 노트", url: "https://docs.arkain.io/whats-new/arkain-release-note" }
       ]
     }
   },
@@ -174,6 +187,7 @@ export const projects = [
     id: "claude-release-automation",
     company: "구름",
     tier: 1,
+    categories: ["AI·자동화"],
     card: {
       title: "Claude 기반 릴리즈 노트 자동화",
       headline: "개발자 9명 의존 → CX 1인 독립 체제 전환",
@@ -186,7 +200,7 @@ export const projects = [
       role: "프롬프트 설계 및 운영 워크플로우 재구축",
       work: [
         "릴리즈 노트 항목 관리 중앙 DB 신설: 기존 스프린트별 분산 인라인 DB → 전 스프린트 통합 관리 체계로 전환",
-        "콘솔·스튜디오 업무 카드 DB와 릴레이션 연결",
+        "노션 데이터베이스 기반 업무 카드와 릴레이션 연결",
         "4단계 검토 상태 시스템 도입: '검토중 → 제외 → 수정예정 → 포함' 워크플로우",
         "가이드라인 ver2 수립: Major/Minor 선정 기준 명문화, 스캔 가독성 중심 영문 작성 원칙",
         "Claude 반자동 프롬프트 4종 설계 (스프린트 번호·URL 입력만으로 즉시 결과 도출)",
@@ -195,7 +209,7 @@ export const projects = [
       results: [
         { metric: "9명 → 1인", desc: "릴리즈 노트 초안 작업 인원" },
         { metric: "2일 → 1시간", desc: "초안 작업 시간 (94% 단축)" },
-        { metric: "0", desc: "개발자 의존도 (업무 카드 직접 조회로 수합 단계 삭제)" },
+        { metric: "0", desc: "개발자 의존도 (카드 직접 조회)" },
         { metric: "자동 차단", desc: "항목 누락·중복 (중복 방지 로직)" }
       ]
     }
@@ -205,6 +219,7 @@ export const projects = [
     id: "notice-automation",
     company: "구름",
     tier: 1,
+    categories: ["AI·자동화"],
     card: {
       title: "공지사항 자동화 시스템",
       headline: "Slack 폼 입력 한 번으로 모든 채널 공지 초안 자동 생성",
@@ -226,10 +241,9 @@ export const projects = [
       results: [
         { metric: "수십 분 → 수 분", desc: "공지 초안 작성 시간 단축" },
         { metric: "원클릭", desc: "Slack에서 폼 제출 한 번으로 완결" },
-        { metric: "범용 적용", desc: "장애·점검·정책·기능 출시 등 다양한 공지 유형 커버" },
-        { metric: "5단계 로드맵", desc: "모니터링 대시보드 웹훅 연동 → 장애 감지 자동 호출까지 확장 설계" }
+        { metric: "범용 적용", desc: "장애·점검·정책·기능 출시 전 유형 커버" },
+        { metric: "5단계 로드맵", desc: "웹훅 연동 → 장애 자동 감지까지 확장" }
       ],
-      note: "Claude와 함께 구현. 본 카드에서는 임팩트·기획 의도 중심으로 정리했습니다."
     }
   },
 
@@ -237,6 +251,7 @@ export const projects = [
     id: "satisfaction-survey",
     company: "구름",
     tier: 2,
+    categories: ["데이터·분석"],
     card: {
       title: "Arkain 고객 만족도 조사 & 리텐션 진단",
       headline: "2,243명 대상 설문 직접 기획·분석으로 가격 정책 의사결정 견인",
@@ -255,10 +270,10 @@ export const projects = [
         "분석 결과 기반 가격 정책 및 혜택 제공 기획안 작성"
       ],
       results: [
-        { metric: "2,243명", desc: "조사 대상 (국내 504 / 해외 1,739)" },
-        { metric: "3.92/5.0", desc: "전체 만족도 (목적 달성도 3.77/5.0)" },
-        { metric: "50%", desc: "이탈 원인 1위 '가격 부담' (26건 중 13건)" },
-        { metric: "기획안 도출", desc: "분석 결과 기반 가격 정책 변경안 작성 → 제품 우선순위 결정의 객관적 근거 제시" }
+        { metric: "2,243명", desc: "조사 대상 (국내 504·해외 1,739)" },
+        { metric: "3.92/5.0", desc: "전체 만족도 (달성도 3.77/5.0)" },
+        { metric: "50%", desc: "이탈 원인 1위 '가격 부담'" },
+        { metric: "기획안 도출", desc: "가격 정책안 작성 → 우선순위 근거 제시" }
       ]
     }
   },
@@ -267,6 +282,7 @@ export const projects = [
     id: "mail-campaigns",
     company: "구름",
     tier: 2,
+    categories: ["CX 운영"],
     card: {
       title: "메일 커뮤니케이션 & 마케팅 캠페인 운영",
       headline: "SOP 도입으로 20건 캠페인 오발송 0건 달성",
@@ -284,11 +300,11 @@ export const projects = [
         "글로벌(영문) / 국내(국문) 세그먼트별 발송 운영"
       ],
       results: [
-        { metric: "20건", desc: "총 캠페인 (누적 280만 건 이상 메일 발송)" },
-        { metric: "0건", desc: "오발송 — SOP 도입 후 과정 관리 누락 사고 0" },
-        { metric: "59~64%", desc: "운영 공지(GPU 장애·멤버십) 오픈율 — 타겟 세그먼트 정확도 검증" },
+        { metric: "20건", desc: "총 캠페인 (280만 건+ 발송)" },
+        { metric: "0건", desc: "오발송 (SOP 도입 후 누락 0)" },
+        { metric: "59~64%", desc: "운영 공지 오픈율 (GPU·멤버십)" },
         { metric: "20~28%", desc: "정책·보안 안내 오픈율" },
-        { metric: "4.9%", desc: "최고 클릭율 (오픈베타 런칭 메일)" }
+        { metric: "4.9%", desc: "최고 클릭율 (오픈베타 런칭)" }
       ]
     }
   },
@@ -297,6 +313,7 @@ export const projects = [
     id: "snap-session-analysis",
     company: "구름",
     tier: 2,
+    categories: ["데이터·분석"],
     card: {
       title: "Snap 이탈 세션 분류 분석",
       headline: "Statsig 50건 전수 분류로 Side Chat 개선 P1~P8 도출",
@@ -316,9 +333,9 @@ export const projects = [
       ],
       results: [
         { metric: "50건", desc: "세션 전수 분류 완료" },
-        { metric: "11개 카테고리", desc: "처리 불가(원인 불명) 13건 · 코드/링크 입력 8건 · 앱 외 요청 7건 · 언어 불일치 5건 등" },
-        { metric: "P1~P8 도출", desc: "제품팀 전달 형식으로 문서화된 개선 제안" },
-        { metric: "버그 식별", desc: "비한국어 입력 → 한국어 응답 등 글로벌 유저 이탈 원인 구체화" }
+        { metric: "11개 카테고리", desc: "원인 불명 13·코드 입력 8·앱 외 7건 등" },
+        { metric: "P1~P8 도출", desc: "제품팀 전달용 문서화 완료" },
+        { metric: "버그 식별", desc: "비한국어→한국어 응답 등 이탈 원인 구체화" }
       ]
     }
   },
@@ -327,6 +344,7 @@ export const projects = [
     id: "kisa-spam-compliance",
     company: "구름",
     tier: 2,
+    categories: ["정책·거버넌스"],
     card: {
       title: "KISA 불법스팸 방지 & 개인정보보호 규제 대응",
       headline: "법적 의무를 즉시 구현 가능한 Task 6건으로 번역",
@@ -347,8 +365,8 @@ export const projects = [
         "광고성 정보 포함 금지 필터링 가이드 작성"
       ],
       results: [
-        { metric: "6건 Task", desc: "법적 의무 → 개발팀 즉시 착수 가능한 시스템 구현 단위로 번역" },
-        { metric: "사전 차단", desc: "포괄적 동의 → 필수/선택 분리 기획으로 법 위반 소지 제거" }
+        { metric: "6건 Task", desc: "법적 의무→즉시 착수 Task로 번역" },
+        { metric: "사전 차단", desc: "포괄→필수/선택 분리로 위반 소지 제거" }
       ]
     }
   },
@@ -359,6 +377,7 @@ export const projects = [
     id: "channeltalk-introduction",
     company: "프리윌린",
     tier: 1,
+    categories: ["CX 운영"],
     card: {
       title: "채널톡 신규 도입 & CX 운영 채널 고도화",
       headline: "응답률 100% 유지 + 매크로 20여 종 표준화",
@@ -387,6 +406,7 @@ export const projects = [
     id: "billing-automation",
     company: "프리윌린",
     tier: 1,
+    categories: ["AI·자동화"],
     card: {
       title: "구독형 멤버십 정산 자동화 & 미수금 회수 개선",
       headline: "수동 정산 공수 80% 절감 + 미수금 회수율 17% 상승",
@@ -413,9 +433,72 @@ export const projects = [
   },
 
   {
+    id: "content-error-system",
+    company: "프리윌린",
+    tier: 1,
+    categories: ["데이터·분석"],
+    card: {
+      title: "VOC 기반 문항 오류 신고 시스템 개선",
+      headline: "부서 간 협업 체계 구축으로 불만 인입 87% 감소",
+      period: "2023.04 – 2024.03",
+      keyMetric: { value: "87% ↓", label: "문항 오류 관련 불만 인입" },
+      tags: ["VOC 분석", "프로세스 개선", "부서 협업"]
+    },
+    details: {
+      background: "문항 오류 신고 시 정보 부족으로 콘텐츠팀과의 커뮤니케이션 비용이 과다 발생하고 대응이 지연됐습니다. 수정 여부에 대한 안내가 없거나 모호해 고객 불만과 반복 문의가 누적되는 구조적 문제를 발견하고, 유관 부서를 설득해 근본적인 프로세스 개선을 주도했습니다.",
+      role: "VOC 분석 및 운영-콘텐츠 협업 프로세스 개선 기획 전 과정 단독 수행",
+      work: [
+        "문항 오류 관련 VOC 누적 건수 및 불만 유형 전수 분석",
+        "운영-콘텐츠팀 간 정기 미팅 채널 개설 (매달 3주차 수요일, VOC 공유 및 우선순위 조율)",
+        "신고 현황 공유 대시보드 제작 — 부서 간 정보 비대칭 해소",
+        "고객 알림톡 내 문항 이미지 자동 첨부 기능 기획·도입",
+        "고객별 오류 신고 내역 조회 기능 도입",
+        "오신고·중복 신고 포함 전수 피드백 운영 원칙 수립"
+      ],
+      results: [
+        { metric: "87% ↓", desc: "문항 오류 불만 인입 (6개월 기준)" },
+        { metric: "100% 응답", desc: "오신고·중복 포함 전수 피드백 원칙" },
+        { metric: "협업 SOP", desc: "운영-콘텐츠 정기 미팅 체계 구축" },
+        { metric: "품질 지표화", desc: "구축 데이터를 신규 문항 검증 지표로 활용" }
+      ]
+    }
+  },
+
+  {
+    id: "copyright-guide",
+    company: "프리윌린",
+    tier: 1,
+    categories: ["정책·거버넌스"],
+    card: {
+      title: "저작물 활용 가이드 제작 & Self-Service 구축",
+      headline: "법률 검토 기반 공식 가이드 게시로 문의 50% 감소",
+      period: "2024.08 – 2024.11",
+      keyMetric: { value: "50% ↓", label: "저작물 관련 고객 문의" },
+      tags: ["정책 설계", "법무 협업", "Self-Service"]
+    },
+    details: {
+      background: "서비스 내 이미지·음원·영상 등 저작물 활용 관련 고객 문의가 반복 인입됐으나 일관된 안내 기준이 없어 고객 혼선과 내부 응대 불일치, 법적 리스크가 공존했습니다. VOC 분석으로 문제를 정의하고 법률 자문부터 가이드 제작·게시까지 전 과정을 단독 수행했습니다.",
+      role: "VOC 분석, 법률 검토 조율, 가이드 기획·제작·게시 전 과정 단독 수행",
+      work: [
+        "저작물 관련 고객 문의 유형·빈도 전수 분석 및 FAQ 항목 추출",
+        "법률 자문을 통한 법적 리스크 사전 검토",
+        "Notion 기반 저작물 활용 가이드 초안 작성",
+        "콘텐츠·개발팀 협업으로 가이드 확정 및 홈페이지 FAQ 연동 게시",
+        "내부 CS팀 대상 저작물 안내 규정 수립"
+      ],
+      results: [
+        { metric: "50% ↓", desc: "저작물 관련 고객 문의" },
+        { metric: "법적 체계화", desc: "법률 자문 기반 리스크 사전 제거" },
+        { metric: "내부 규정 수립", desc: "CS팀 응대 일관성 확보" }
+      ]
+    }
+  },
+
+  {
     id: "trial-conversion",
     company: "프리윌린",
     tier: 1,
+    categories: ["CX 운영"],
     card: {
       title: "무료체험 전환율 최적화 & 태블릿 회수 개선",
       headline: "유저 여정 세분화로 두 자릿수 개선 달성",

@@ -4,15 +4,19 @@ import { projects } from '../data/projects';
 import ProjectModal from './ProjectModal';
 
 const companies = ['전체', '구름', '프리윌린'];
+const categories = ['전체', 'AI·자동화', '데이터·분석', '정책·거버넌스', 'CX 운영'];
 
 export default function Projects() {
   const [activeCompany, setActiveCompany] = useState('전체');
+  const [activeCategory, setActiveCategory] = useState('전체');
   const [showMore, setShowMore] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filtered = activeCompany === '전체'
-    ? projects
-    : projects.filter((p) => p.company === activeCompany);
+  const filtered = projects.filter((p) => {
+    const matchCompany = activeCompany === '전체' || p.company === activeCompany;
+    const matchCategory = activeCategory === '전체' || p.categories?.includes(activeCategory);
+    return matchCompany && matchCategory;
+  });
 
   const tier1 = filtered.filter((p) => p.tier === 1);
   const tier2 = filtered.filter((p) => p.tier === 2);
@@ -37,52 +41,82 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex gap-2 mb-8 flex-wrap"
+          className="flex flex-col gap-3 mb-8"
         >
-          {companies.map((c) => (
-            <button
-              key={c}
-              onClick={() => { setActiveCompany(c); setShowMore(false); }}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                activeCompany === c
-                  ? 'bg-brand-600 text-white shadow-md'
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-brand-50 dark:hover:bg-brand-900/20'
-              }`}
-            >
-              {c}
-            </button>
-          ))}
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 w-10 shrink-0">회사</span>
+            {companies.map((c) => (
+              <button
+                key={c}
+                onClick={() => { setActiveCompany(c); setShowMore(false); }}
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all ${
+                  activeCompany === c
+                    ? 'bg-brand-600 text-white shadow-md'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-brand-50 dark:hover:bg-brand-900/20'
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 w-10 shrink-0">성격</span>
+            {categories.map((c) => (
+              <button
+                key={c}
+                onClick={() => { setActiveCategory(c); setShowMore(false); }}
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all ${
+                  activeCategory === c
+                    ? 'bg-brand-600 text-white shadow-md'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-brand-50 dark:hover:bg-brand-900/20'
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Tier 1 */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
-          {tier1.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} onClick={() => setSelectedProject(project)} />
-          ))}
-        </div>
-
-        {/* Tier 2 */}
-        {tier2.length > 0 && (
+        {activeCompany === '전체' && activeCategory === '전체' ? (
           <>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400">
-                Additional Projects ({tier2.length})
-              </h3>
-              <button
-                onClick={() => setShowMore(!showMore)}
-                className="text-sm text-brand-600 dark:text-brand-400 font-medium hover:underline"
-              >
-                {showMore ? '접기 ↑' : '더 보기 ↓'}
-              </button>
+            {/* Tier 1 */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+              {tier1.map((project, i) => (
+                <ProjectCard key={project.id} project={project} index={i} onClick={() => setSelectedProject(project)} />
+              ))}
             </div>
-            {showMore && (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {tier2.map((project, i) => (
-                  <ProjectCard key={project.id} project={project} index={i} onClick={() => setSelectedProject(project)} />
-                ))}
-              </div>
+
+            {/* Tier 2 — collapsible */}
+            {tier2.length > 0 && (
+              <>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
+                  <button
+                    onClick={() => setShowMore(!showMore)}
+                    className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-500 dark:text-gray-400 hover:border-brand-400 hover:text-brand-600 dark:hover:border-brand-500 dark:hover:text-brand-400 transition-colors whitespace-nowrap"
+                  >
+                    Additional Projects ({tier2.length})
+                    <span className="text-xs">{showMore ? '↑' : '↓'}</span>
+                  </button>
+                  <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
+                </div>
+                {showMore && (
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {tier2.map((project, i) => (
+                      <ProjectCard key={project.id} project={project} index={i} onClick={() => setSelectedProject(project)} />
+                    ))}
+                  </div>
+                )}
+              </>
             )}
           </>
+        ) : (
+          /* 필터 활성 시 tier 구분 없이 단일 그리드 */
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filtered.map((project, i) => (
+              <ProjectCard key={project.id} project={project} index={i} onClick={() => setSelectedProject(project)} />
+            ))}
+          </div>
         )}
       </div>
 

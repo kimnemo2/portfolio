@@ -36,9 +36,9 @@ export default function Skills() {
                 <span className="text-2xl">{group.icon}</span>
                 <h3 className="font-bold text-gray-900 dark:text-white text-sm">{group.category}</h3>
               </div>
-              <div className="space-y-3">
+              <div className="divide-y divide-gray-100 dark:divide-gray-700/50">
                 {group.items.map((item, ii) => (
-                  <div key={ii} className="flex flex-col gap-1">
+                  <div key={ii} className="flex flex-col gap-1 py-2.5 first:pt-0 last:pb-0">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-800 dark:text-gray-200 font-medium">{item.name}</span>
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${levelColor[item.level]}`}>
@@ -46,7 +46,7 @@ export default function Skills() {
                       </span>
                     </div>
                     {item.note && (
-                      <span className="text-xs text-gray-400 dark:text-gray-500 leading-tight">{item.note}</span>
+                      <span className="text-xs text-gray-400 dark:text-gray-500 leading-snug">{item.note}</span>
                     )}
                   </div>
                 ))}

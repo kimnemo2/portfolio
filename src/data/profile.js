@@ -3,7 +3,7 @@ export const profile = {
   nameEn: "Nahyeon Kim",
   photo: "/profile.png",
   title: "Service Operation Manager",
-  subtitle: "CX 4년차 · 데이터·AI 기반 서비스 운영 전문가",
+  subtitle: "CX 5년차 · 데이터·AI 기반 서비스 운영 전문가",
   tagline: "고객의 목소리를 데이터로, 데이터를 시스템으로 만듭니다",
   email: "kimnemo2@gmail.com",
   phone: "010-2651-3880",
@@ -21,7 +21,7 @@ export const profile = {
   ],
 
   highlights: [
-    "4년차 플랫폼 CX 전문성 — 100% 응답률 유지",
+    "5년차 플랫폼 CX 전문성 — 100% 응답률 유지",
     "AI 자동화로 운영 공수 최대 94% 절감",
     "45만 명 / 280만 건 무결점 커뮤니케이션",
     "VOC·세션 분석 기반 제품 개선 발의",
@@ -34,20 +34,20 @@ export const profile = {
       school: "서강대학교",
       degree: "학사 졸업",
       major: "경영학 / 융합소프트웨어 (복수전공)",
-      gpa: "3.81 / 4.3"
+      gpa: "3.99 / 4.5"
     }
   ],
 
   careers: [
     {
-      period: "2025.06 – 현재",
+      period: "2025.06 – 현재 (11개월)",
       company: "주식회사 구름",
       team: "Customer eXperience Team",
       role: "매니저",
       summary: "AI 자동화 기반 글로벌 CX 오퍼레이션 고도화 및 데이터 기반 프로덕트 개선 주도"
     },
     {
-      period: "2022.03 – 2025.04",
+      period: "2022.03 – 2025.04 (3년 2개월)",
       company: "주식회사 프리윌린",
       team: "서비스 운영팀",
       role: "매니저",
